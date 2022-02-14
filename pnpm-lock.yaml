@@ -178,6 +178,7 @@ importers:
       '@docsearch/react': 3.0.0-alpha.50
       '@iconify-json/ri': 1.1.0
       '@types/markdown-it': 12.2.3
+      '@types/md5': ^2.3.2
       '@vueuse/core': 7.6.2
       axios: 0.26.0
       clipboard-copy: 4.0.1
@@ -186,8 +187,10 @@ importers:
       escape-html: 1.0.3
       markdown-it: 12.3.2
       markdown-it-container: 3.0.0
+      md5: ^2.3.0
       normalize.css: 8.0.1
       nprogress: 0.2.0
+      simple-git: ^3.2.4
       unplugin-icons: 0.13.1
       unplugin-vue-components: 0.17.18
       vite: 2.8.2
@@ -207,10 +210,13 @@ importers:
       '@crowdin/cli': 3.7.7
       '@iconify-json/ri': 1.1.0
       '@types/markdown-it': 12.2.3
+      '@types/md5': 2.3.2
       cross-env: 7.0.3
       escape-html: 1.0.3
       markdown-it: 12.3.2
       markdown-it-container: 3.0.0
+      md5: 2.3.0
+      simple-git: 3.2.4
       unplugin-icons: 0.13.1_09f2f54f1fdbc10610e2972abdbb84c2
       unplugin-vue-components: 0.17.18_2e05f1d124a8b54641d9b5323cd54741
       vite: 2.8.2_sass@1.49.7
@@ -2209,6 +2215,18 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.10
     dev: true
 
+  /@kwsites/file-exists/1.1.1:
+    resolution: {integrity: sha512-m9/5YGR18lIwxSFDwfE3oA7bWuq9kdau6ugN4H2rJeyhFQZcG9AgSHkQtSD15a8WvTgfz9aikZMrKPHvbpqFiw==}
+    dependencies:
+      debug: 4.3.3
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@kwsites/promise-deferred/1.1.1:
+    resolution: {integrity: sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==}
+    dev: true
+
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -2888,6 +2906,10 @@ packages:
     dependencies:
       '@types/linkify-it': 3.0.2
       '@types/mdurl': 1.0.2
+    dev: true
+
+  /@types/md5/2.3.2:
+    resolution: {integrity: sha512-v+JFDu96+UYJ3/UWzB0mEglIS//MZXgRaJ4ubUPwOM0gvLc/kcQ3TWNYwENEK7/EcXGQVrW8h/XqednSjBd/Og==}
     dev: true
 
   /@types/mdurl/1.0.2:
@@ -4417,6 +4439,10 @@ packages:
     resolution: {integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==}
     dev: true
 
+  /charenc/0.0.2:
+    resolution: {integrity: sha1-wKHS86cJLgN3S/qD8UwPxXkKhmc=}
+    dev: true
+
   /check-more-types/2.24.0:
     resolution: {integrity: sha1-FCD/sQ/URNz8ebQ4kbv//TKoRgA=}
     engines: {node: '>= 0.8.0'}
@@ -4906,6 +4932,10 @@ packages:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
+    dev: true
+
+  /crypt/0.0.2:
+    resolution: {integrity: sha1-iNf/fsDfuG9xPch7u0LQRNPmxBs=}
     dev: true
 
   /crypto-random-string/2.0.0:
@@ -8698,6 +8728,14 @@ packages:
       stack-trace: 0.0.10
     dev: true
 
+  /md5/2.3.0:
+    resolution: {integrity: sha512-T1GITYmFaKuO91vxyoQMFETst+O71VUPEU3ze5GNzDm0OWdP8v1ziTaAEPUr/3kLsY3Sftgz242A1SetQiDL7g==}
+    dependencies:
+      charenc: 0.0.2
+      crypt: 0.0.2
+      is-buffer: 1.1.6
+    dev: true
+
   /mdurl/1.0.1:
     resolution: {integrity: sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=}
     dev: true
@@ -10641,6 +10679,16 @@ packages:
 
   /signal-exit/3.0.5:
     resolution: {integrity: sha512-KWcOiKeQj6ZyXx7zq4YxSMgHRlod4czeBQZrPb8OKcohcqAXShm7E20kEMle9WBt26hFcAf0qLOcp5zmY7kOqQ==}
+    dev: true
+
+  /simple-git/3.2.4:
+    resolution: {integrity: sha512-hkn1LgXW9bYqvAbge60m7W9iGljSTe2F66II03eNc4s+/czwHSUWEHe7UQlmWCfBxl6DiusD+6g0ifHbJlG8Xg==}
+    dependencies:
+      '@kwsites/file-exists': 1.1.1
+      '@kwsites/promise-deferred': 1.1.1
+      debug: 4.3.3
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /sirv/2.0.0:

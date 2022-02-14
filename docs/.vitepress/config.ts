@@ -4,6 +4,7 @@ import { sidebars } from './config/sidebars'
 import { nav } from './config/nav'
 import { mdPlugin } from './config/plugins'
 import { features } from './config/features'
+import { repo, branch, docsDir } from './vitepress/constant'
 import type { UserConfig } from 'vitepress'
 
 const buildTransformers = () => {
@@ -48,8 +49,9 @@ export const config: UserConfig = {
   description: 'a Vue 3 based component library for designers and developers',
   head,
   themeConfig: {
-    repo: 'element-plus/element-plus',
-    docsDir: 'docs',
+    repo,
+    branch,
+    docsDir,
 
     editLinks: true,
     editLinkText: 'Edit this page on GitHub',

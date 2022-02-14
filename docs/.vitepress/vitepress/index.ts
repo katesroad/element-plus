@@ -13,6 +13,7 @@ import SecondaryColors from './components/globals/secondary-colors.vue'
 import IconList from './components/globals/icons.vue'
 
 import ParallaxHome from './components/globals/parallax-home.vue'
+import Contributors from './components/globals/contributors.vue'
 
 import type { Component } from 'vue'
 
@@ -27,4 +28,5 @@ export const globals: [string, Component][] = [
   ['IconList', IconList],
   ['Changelog', Changelog],
   ['ParallaxHome', ParallaxHome],
+  ['Contributors', Contributors],
 ]

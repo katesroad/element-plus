@@ -9,3 +9,7 @@ export const breakpoints = {
   xlg: 1280,
   xxl: 1440,
 }
+
+export const repo = 'element-plus/element-plus'
+export const branch = 'dev'
+export const docsDir = 'docs'

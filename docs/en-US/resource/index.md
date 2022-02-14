@@ -3,10 +3,6 @@ page: true
 lang: en-US
 ---
 
-<script setup lang="ts">
-
-</script>
-
 <style lang="scss" scoped>
 .page-resource {
   box-sizing: border-box;
