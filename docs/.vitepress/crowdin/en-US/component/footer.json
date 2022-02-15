@@ -1,4 +1,6 @@
 {
   "source": "Source",
-  "contributors": "Contributors"
+  "contributors": "Contributors",
+  "component": "Component",
+  "docs": "Docs"
 }

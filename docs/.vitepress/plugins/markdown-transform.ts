@@ -85,8 +85,8 @@ import footerLocale from '../../.vitepress/i18n/component/footer.json'
 const footer = useLocale(footerLocale)
 `)
 
-  const links = [['Docs', docUrl]]
-  if (isComponent) links.unshift(['Component', componentUrl])
+  const links = [['{{ footer.docs }}', docUrl]]
+  if (isComponent) links.unshift(['{{ footer.component }}', componentUrl])
   const linksText = links
     .filter((i) => i)
     .map(([text, link]) => `[${text}](${link})`)
