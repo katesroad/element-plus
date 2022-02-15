@@ -22,11 +22,11 @@ export function MarkdownTransform(): Plugin {
         ],
       }
 
-      code = extractVpScriptSetup(code, append)
+      code = transformVpScriptSetup(code, append)
 
       const compPath = path.resolve(docRoot, 'en-US/component')
       if (id.startsWith(compPath)) {
-        code = getComponentMarkdown(componentId, code, append)
+        code = transformComponentMarkdown(componentId, code, append)
       }
 
       return combineMarkdown(
@@ -63,7 +63,7 @@ const combineMarkdown = (
 
 const vpScriptSetupRE = /<vp-script\s(.*\s)?setup(\s.*)?>([\s\S]*)<\/vp-script>/
 
-const extractVpScriptSetup = (code: string, append: Append) => {
+const transformVpScriptSetup = (code: string, append: Append) => {
   const matches = code.match(vpScriptSetupRE)
   if (matches) code = code.replace(matches[0], '')
   const scriptSetup = matches?.[3] ?? ''
@@ -73,7 +73,11 @@ const extractVpScriptSetup = (code: string, append: Append) => {
 
 const GITHUB_BLOB_URL = `https://github.com/${repo}/blob/${branch}`
 const GITHUB_TREE_URL = `https://github.com/${repo}/tree/${branch}`
-const getComponentMarkdown = (id: string, code: string, append: Append) => {
+const transformComponentMarkdown = (
+  id: string,
+  code: string,
+  append: Append
+) => {
   const docUrl = `${GITHUB_BLOB_URL}/${docsDir}/en-US/component/${id}.md`
   const componentUrl = `${GITHUB_TREE_URL}/packages/components/${id}`
   const componentPath = path.resolve(projRoot, `packages/components/${id}`)
